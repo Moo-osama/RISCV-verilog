@@ -21,19 +21,29 @@ In this milestone, we used some of the modules we implemented in the lab and mod
 
 
 II.	Milestone 3:
-We started this milestone by upgrading the single cycle processor to be pipelined. Forward unite, a hazard detection unite, and branching unite were also created handle hazards. 
+We started this milestone by upgrading the single cycle processor to be pipelined. Forward unite, a hazard detection unite, and branching unite were also created handle hazards.
+
 •	The Forwarding Unit:
 this unite compares the destination in the two previous instructions EXMEM rd and MEMWB rd to the sources of the current instruction and forward those destinations if needed to one of the ALU inputs.
+
 •	Hazard Detection Unit:
 This unite checks if a load word instruction has a destination that is the same as the instruction after it. In this case, we need to stall the CPU one cycle to have the correct read data from the memory.
+
 •	Branching Unit:
 This unite takes the opcode and function 3 of the instruction in addition to all the ALU flags and outputs one flag which controls the input of the PC and is also used to flush the pipeline register in case of a branch.
+
 •	Single memory:
+
 a)	The size of the single memory is 4kb and it was designed to be byte addressable.
+
 b)	Sine this memory will hold both instructions and data.  An efficient design approach was to store the instruction starting from mem[0] which is the very first byte and store the data starting from the largest index. This division allowed a clear and easy accessing mechanism for both instructions and data.
+
 c)	Since increasing the CPI to avoid load and store word hazard will decrease the performance of the processor, we decided to develop the hazard detection to deal with the new load, store word hazard.
-d)	If a load word instruction is being performed, the hazard detection stalls the CPU for one clock cycle to avoid collisions with the instructions being fetched
+
+d)	If a load word instruction is being performed, the hazard detection stalls the CPU for one clock cycle to avoid collisions with the instructions being fetched.
+
 e)	In case of a store word, we designed this memory to read and write at different clock edges to avoid collisions.  
+
 
 III.	Milestone 4:
 The aim of this milestone is to thoroughly test all the processor functionalities (47 instructions). We decided to take follow an easier, clearer and more applicable way to testing. This method is to write an assembly code in which the result of every instruction depends on the previous instruction. We then traced the code to know it’s output and compared it to the values we found in the registers to verify the correctness of the processor.   
