@@ -64,7 +64,7 @@ However, in the pipelined data path, the testbench was only written to alternate
 
 ## Validation:
 <p align="center">
-<img src="validation.png">
+<img src="validation2.png">
 </p>
 
 ## Conclusion:
