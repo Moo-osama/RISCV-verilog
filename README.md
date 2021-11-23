@@ -11,10 +11,14 @@ This project requirement is to design RISC-V processor that supports RV32I base 
 
 ## Milestones: 
 I.	Milestone 2:
-In this milestone, we used some of the modules we implemented in the lab and modified them to implement the single cycle processor that can support RV32 wanted instructions. 
-•	Modified the data memory and instruction memory to be word addressable 
+In this milestone, we used some of the modules we implemented in the lab and modified them to implement the single cycle processor that can support RV32 wanted instructions.
+
+•	Modified the data memory and instruction memory to be word addressable.
+
 •	new multiplexers were added to accommodate instructions like AUIPC, JAL and JALR instructions.
-•	The ALU module was modified to do the all the required shifting operations (SRL, SRA, SLL)
+
+•	The ALU module was modified to do the all the required shifting operations (SRL, SRA, SLL).
+
 
 II.	Milestone 3:
 We started this milestone by upgrading the single cycle processor to be pipelined. Forward unite, a hazard detection unite, and branching unite were also created handle hazards. 
